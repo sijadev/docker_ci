@@ -62,7 +62,7 @@ More infos for jenkins integration: https://docs.gitlab.com/ee/integration/jenki
     - Jenkins Configuration / Manage credentials / Store Jenkins / Create usenname & password = token
     - Jenkins Configuration / Manage credentials / Store Jenkins / Gitlab API -->  use the API Token
     - Jenkins Configuration / Jenkins Settings / Gitlab 
-      --> url:http://DockerID  | Credentials: Gitlab API Token
+      --> url: http://DockerID  | Credentials: Gitlab API Token
     - Create Pipeline Project 
     - Use Script from SCM
     - Url from gitlab (with docker IP address) 
