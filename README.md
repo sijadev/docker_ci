@@ -60,7 +60,7 @@ More infos for jenkins integration: https://docs.gitlab.com/ee/integration/jenki
     
   - Remind you will need the docker ip for the gitlab repo
   
-   use: docker container inspect id or name
+     use: docker container inspect id or name
 
 get plugins from existing container
 get docker ip with: docker container inspect <id>
