@@ -45,8 +45,8 @@ docker stop jenkins gitlab
    Log in with the created root account and add under root settings/ssh keys
    the same public key exsample from ur .ssh folder
 3. Create a project and follow the instructions 
-4. Project Repo Settings: Deploy Tokens / \FCreate Deploy Token
-5. Save user name / token
+4. Project Repo Settings: Deploy Tokens / Create Deploy Token
+5. Save user name / token ---> used in the jenkins project
 6. 
 More infos for jenkins integration: https://docs.gitlab.com/ee/integration/jenkins.html
   
@@ -60,6 +60,9 @@ More infos for jenkins integration: https://docs.gitlab.com/ee/integration/jenki
    - All need plugins are already installed --> Initial plugins
  2. Configure Jenkins
     - Jenkins Configuration / Manage credentials / Store Jenkins / Create usenname & password = token
+    - Jenkins Configuration / Manage credentials / Store Jenkins / Gitlab API -->  use the API Token
+    - Jenkins Configuration / Jenkins Settings / Gitlab 
+      --> url: http://<Docker ID>  | Credentials: Gitlab API Token
     - Create Pipeline Project 
     - Use Script from SCM
     - Url from gitlab (with docker IP address) 
