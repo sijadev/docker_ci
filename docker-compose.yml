@@ -1,0 +1,23 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  jenkins:
+    user: "${UID}:${GID}"
+    container_name: jenkins
+    build: .
+    ports:
+      - '$JEN_PORT_HTTP:8080'
+      - '$JEN_PORT:50000'
+    volumes:
+      - '$PATH_VAR_JENKINS:/var/jenkins_home'
+  gitlab:
+    container_name: gitlab
+    image: 'store/gitlab/gitlab-ce:11.10.4-ce.0'
+    hostname: 'gitlab.dev.com'
+    ports:
+      - '$GIT_PORT_HTTP:80'
+      - '$GIT_PORT_HTTPS:443'
+      - '$GIT_PORT_SSH:22'
+    volumes:
+      - '$PATH_ETC_GITLAB:/etc/gitlab'
+      - '$PATH_VAR_LOG_GITLAB:/var/log/gitlab'
+      - '$PATH_VAR_OPT_GITLAB:/var/opt/gitlab'
