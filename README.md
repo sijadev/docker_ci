@@ -37,7 +37,16 @@ docker start gitlab jenkins
 
 docker stop jenkins gitlab
 
-# Jenkins
+# Gitlab:
+
+1. Add in the/etc/hosts file: 127.0.0.1  gitlab-dev.com
+2. http://gitlab-dev.com
+Log in with the created root account and add under root settings/ssh keys
+the same public key exsample from ur .ssh folder
+  
+  
+  
+# Jenkins:
 
 get plugins from existing container
 get docker ip with: docker container inspect <id>
@@ -45,4 +54,5 @@ Use the created user and password
 --------------------------------------------------  
 JENKINS_HOST='user:password@<docker-ip>:8080'
 curl -sSL "http://$JENKINS_HOST/pluginManager/api/xml?depth=1&xpath=/*/*/shortName|/*/*/version&wrapper=plugins" | perl -pe 's/.*?<shortName>([\w-]+).*?<version>([^<]+)()(<\/\w+>)+/\1 \2\n/g'|sed 's/ /:/'
+
 
