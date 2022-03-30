@@ -42,10 +42,11 @@ docker stop jenkins gitlab
 1. Add in the/etc/hosts file: 
       127.0.0.1  gitlab-dev.com
 2. http://gitlab-dev.com
-Log in with the created root account and add under root settings/ssh keys
-the same public key exsample from ur .ssh folder
+   Log in with the created root account and add under root settings/ssh keys
+   the same public key exsample from ur .ssh folder
 3. Create a project and follow the instructions 
-
+4. Project Repo Settings: Deploy Tokens / Create Deploy Token
+5. Save user name / token
 More infos for jenkins integration: https://docs.gitlab.com/ee/integration/jenkins.html
   
 # Jenkins:
@@ -57,10 +58,11 @@ More infos for jenkins integration: https://docs.gitlab.com/ee/integration/jenki
    - http://127.0.0.1:8080/ and paste the password.
    - All need plugins are already installed --> Initial plugins
  2. Configure Jenkins
-    
-  - Remind you will need the docker ip for the gitlab repo
-  
-     use: docker container inspect id or name
+    - Jenkins Configuration / Manage credentials / Store Jenkins / Create usenname & password = token
+    - Create Pipeline Project 
+    - Use Script from SCM
+    - Url from gitlab (with docker IP address) 
+      use: docker container inspect id or name
 
 get plugins from existing container
 get docker ip with: docker container inspect <id>
