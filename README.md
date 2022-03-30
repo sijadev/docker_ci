@@ -50,9 +50,9 @@ More infos for jenkins integration: https://docs.gitlab.com/ee/integration/jenki
 # Jenkins:
 
 1. During the build appears the init password for jenkins !
-   - copy it from the console
-   - docker exec -u 0 -it jenkins bash
-   - cat /var/lib/jenkins/secrets/initialAdminPassword
+   - copy it from the console .. or 
+        - docker exec -u 0 -it jenkins bash
+        - cat /var/lib/jenkins/secrets/initialAdminPassword
 
 get plugins from existing container
 get docker ip with: docker container inspect <id>
