@@ -75,3 +75,4 @@ curl -sSL "http://$JENKINS_HOST/pluginManager/api/xml?depth=1&xpath=/*/*/shortNa
 General Note:
 ---------------
 ---------------
+Next Step Web Hook
