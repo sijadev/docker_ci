@@ -34,6 +34,7 @@ start & stop containers:
 ------------------------ 
 
 docker start gitlab jenkins
+
 docker stop jenkins gitlab
 
 # Jenkins
