@@ -57,8 +57,11 @@ More infos for jenkins integration: https://docs.gitlab.com/ee/integration/jenki
    - http://127.0.0.1:8080/ and paste the password.
    - All need plugins are already installed --> Initial plugins
  2. Configure Jenkins
-    - Remind you will need the docker ip for the gitlab repo
-    -> docker container inspect <id or name>:
+    
+  - Remind you will need the docker ip for the gitlab repo
+  
+  -> docker container inspect <id or name>:
+
 get plugins from existing container
 get docker ip with: docker container inspect <id>
 Use the created user and password
