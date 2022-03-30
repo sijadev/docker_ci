@@ -4,12 +4,17 @@
 
 docker container inspect <id>:
 ------------------------------ 
+
 docker images
+
 docker ps -a
+
 
 docker container commit CONTAINER IMAGES:
 -----------------------------------------
+
 docker container commit jenkins jenkins/jenkins:lts
+
 docker container commit gitlab store/gitlab/gitlab-ce
 
 container bash as root:
