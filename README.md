@@ -43,10 +43,16 @@ docker stop jenkins gitlab
 2. http://gitlab-dev.com
 Log in with the created root account and add under root settings/ssh keys
 the same public key exsample from ur .ssh folder
-  
-  
+3. Create a project and follow the instructions 
+
+More infos for jenkins integration: https://docs.gitlab.com/ee/integration/jenkins.html
   
 # Jenkins:
+
+1. During the build appears the init password for jenkins !
+   - copy it from the console
+   - docker exec -u 0 -it jenkins bash
+   - cat /var/lib/jenkins/secrets/initialAdminPassword
 
 get plugins from existing container
 get docker ip with: docker container inspect <id>
