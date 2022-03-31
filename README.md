@@ -48,9 +48,7 @@ docker stop jenkins gitlab
    Log in with root account add under root settings/ssh keys
    public key exsample from ur .ssh folder
 3. Create a project and follow the instructions 
-4. Project Repo Settings: Deploy Tokens / Create Deploy Token
-5. Save user name / token ---> used in the jenkins project
-6. 
+
 More infos for jenkins integration: https://docs.gitlab.com/ee/integration/jenkins.html
   
 # Jenkins:
@@ -61,15 +59,6 @@ More infos for jenkins integration: https://docs.gitlab.com/ee/integration/jenki
         - cat /var/lib/jenkins/secrets/initialAdminPassword
    - http://127.0.0.1:8080/ and paste the password.
    - All need plugins are already installed --> Initial plugins
- 2. Configure Jenkins
-    - Jenkins Configuration / Manage credentials / Store Jenkins / Create usenname & password = token
-    - Jenkins Configuration / Manage credentials / Store Jenkins / Gitlab API -->  use the API Token
-    - Jenkins Configuration / Jenkins Settings / Gitlab 
-      --> url: http://DockerID  | Credentials: Gitlab API Token
-    - Create Pipeline Project 
-    - Use Script from SCM
-    - Url from gitlab (with docker IP address) 
-      use: docker container inspect id or name
 
 get plugins from existing container
 get docker ip with: docker container inspect <id>
@@ -78,13 +67,3 @@ Use the created user and password
 JENKINS_HOST='user:password@<docker-ip>:8080'
 curl -sSL "http://$JENKINS_HOST/pluginManager/api/xml?depth=1&xpath=/*/*/shortName|/*/*/version&wrapper=plugins" | perl -pe 's/.*?<shortName>([\w-]+).*?<version>([^<]+)()(<\/\w+>)+/\1 \2\n/g'|sed 's/ /:/'
 
-
-General Note:
----------------
----------------
-
-Webhooks config:
-  - jenkins project settings ---> Allowed branches: Allow all branches to trigger this job 
-  - generate tokens !
-  - start build from external
-  - create token name --> copy token name, tokens, webhoock url
