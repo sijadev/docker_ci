@@ -39,11 +39,8 @@ docker stop jenkins gitlab
 
 # Gitlab:
 
-1. Add in the/etc/hosts file: 
-      127.0.0.1  gitlab-dev.com
-2. open local bash and connect to gitlab container
-    - docker exec -u 0 -it gitlab bash
-3. Change the root pwd with: gitlab-rake 'gitlab:password:reset[root]
+1. docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password
+   returns the password for root
 2. gitlab account
    Log in with root account add under root settings/ssh keys
    public key exsample from ur .ssh folder
@@ -53,10 +50,7 @@ More infos for jenkins integration: https://docs.gitlab.com/ee/integration/jenki
   
 # Jenkins:
 
-1. During the build appears the init password for jenkins !
-   - copy it from the console .. or 
-        - docker exec -u 0 -it jenkins bash
-        - cat /var/lib/jenkins/secrets/initialAdminPassword
+1. - docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
    - http://127.0.0.1:8080/ and paste the password.
    - All need plugins are already installed --> Initial plugins
 
