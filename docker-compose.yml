@@ -1,11 +1,10 @@
 version: "3.9"  # optional since v1.27.0
 services:
   gitlab:
+    user: "${UID}:${GID}"
     container_name: gitlab
     image: 'gitlab/gitlab-ce'
     hostname: 'gitlab.dev.com'
-    links:
-      - 'jenkins:gitlab'
     ports:
       - '$GIT_PORT_HTTP:80'
       - '$GIT_PORT_HTTPS:443'
@@ -17,6 +16,9 @@ services:
   jenkins:
     user: "${UID}:${GID}"
     container_name: jenkins
+    links:
+      - gitlab
+    hostname: 'jenkins-dev.com'
     build: .
     ports:
       - '$JEN_PORT_HTTP:8080'
