@@ -44,7 +44,7 @@ docker stop jenkins gitlab
 2. open local bash and connect to gitlab container
     - docker exec -u 0 -it gitlab bash
 3. Change the root pwd with: gitlab-rake 'gitlab:password:reset[root]
-2. http://gitlab-dev.com
+2. gitlab account
    Log in with root account add under root settings/ssh keys
    public key exsample from ur .ssh folder
 3. Create a project and follow the instructions 
