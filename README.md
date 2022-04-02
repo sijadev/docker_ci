@@ -1,5 +1,13 @@
 # jenkins_gitlab
 
+Requirements:
+- docker and docker-compose is installed.
+
+Installation:
+- cd docker_ci
+- if you want to change the path of the data folder --> .env
+- open terminal: docker-compose up 
+
 # Gitlab:
 
 - docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password
