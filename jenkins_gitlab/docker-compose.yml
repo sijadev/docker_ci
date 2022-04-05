@@ -4,7 +4,6 @@ services:
     user: "${UID}:${GID}"
     container_name: gitlab
     image: 'gitlab/gitlab-ce'
-    hostname: 'gitlab.dev.com'
     ports:
       - '$GIT_PORT_HTTP:80'
       - '$GIT_PORT_HTTPS:443'
@@ -18,7 +17,6 @@ services:
     container_name: jenkins
     links:
       - gitlab
-    hostname: 'jenkins-dev.com'
     build: .
     ports:
       - '$JEN_PORT_HTTP:8080'

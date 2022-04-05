@@ -9,8 +9,8 @@ if [ "$1" == '-start' ]; then
     docker start gitlab jenkins
     docker network disconnect  docker_default jenkins
     docker network disconnect docker_default gitlab
-    docker network connect --ip '172.19.0.2' --alias 'gitlab'  docker_default gitlab
-    docker network connect --ip '172.19.0.3' --alias 'jenkins' docker_default jenkins
+    docker network connect --ip '172.19.0.2'  docker_default gitlab
+    docker network connect --ip '172.19.0.3'  docker_default jenkins
 fi
 return
 }
